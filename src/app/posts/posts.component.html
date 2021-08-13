@@ -1,0 +1,30 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+<div class="col" *ngFor="let animalito of animalitos;">
+  <div class="card shadow-sm">
+    <img class="bd-placeholder-img card-img-top" src="./assets/perritos/{{animalito.foto}}" width="100%" height="225" />
+    <div class="card-body">
+      <h5 class="card-title">{{animalito.nombre}}</h5>
+      <p class="card-text">{{animalito.descripcion}}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">{{animalito.raza}}</button>
+        </div>
+        <small class="text-muted" *ngIf="animalito.edad >1; else cachorro">{{animalito.edad}} Años</small>
+        <ng-template #cachorro>
+        <small class="text-muted" >{{animalito.edad}} Año</small>
+        </ng-template>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
